@@ -155,12 +155,12 @@ For local used if you have your own Nvidia GPU, you can use the provided Docker 
 
 The dataset from Waymo contains information about bounding boxes and label classes. The images vary from being bright daylight, night time, and weather conditions. Ranging from low to high quality. Vechicles are represented in a red box, pedestrians are represented in a blue box, and cyclits are represented in a green box.
 
-| ![](./Images/Image1.png)  |  ![](./Images/Image2.png)  |
-:-------------------------:|:-------------------------:
-| ![](./Images/Image3.png)  |  ![](./Images/Image4.png)  |
-| ![](./Images/Image5.png)  |  ![](./Images/Image6.png)  |
-| ![](./Images/Image7.png)  |  ![](./Images/Image8.png)  |
-| ![](./Images/Image9.png)  |  ![](./Images/Image10.png)  |
+| ![](./Images/Image1.PNG)  |  ![](./Images/Image2.PNG)  |
+:--------------------------:|:---------------------------:
+| ![](./Images/Image3.PNG)  |  ![](./Images/Image4.PNG)  |
+| ![](./Images/Image5.PNG)  |  ![](./Images/Image6.PNG)  |
+| ![](./Images/Image7.PNG)  |  ![](./Images/Image8.PNG)  |
+| ![](./Images/Image9.PNG)  |  ![](./Images/Image10.PNG) |
 
 
 #### Cross validation
@@ -168,7 +168,7 @@ This section should detail the cross validation strategy and justify your approa
 
 Sampled through 10000 images from the dataset to analysis the labeling between vehicles, pedestrians, and cyclist as shown in the figure below. Vehicles have a high distribution compared to pedestrians and cyclist. Cyclist showing a very low minor distribution.
 
-![](./Images/Histrogram.png)
+![](./Images/Histrogram.PNG)
 
 ### Training
 #### Reference experiment
