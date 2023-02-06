@@ -180,7 +180,6 @@ For the training experiment the residual network model (Resnet) was used. Initia
 ![](./Images/TensorBoard - Recall - NoAUG.PNG)
 
 #### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
 
 To improve on the experiment, several augmentations were implemented to the model from the Object Detection API.
 
@@ -201,9 +200,10 @@ Here are some results images with the augmentations options.
 
 The model is trained and evaluated with the augmented options. Due to computational power and memory the model was trained to 3000 steps. Overall, the augmented model decreased more compared to the reference model with no augmented options. The loss is much lower, thus indicating it is performing better. Results of the model with augmented options is shown below.
 
-![](./Images/TensorBoard - Loss - AUG.PNG)
+![](./Images/TensorBoard - Loss AUG.PNG)
 
 ![](./Images/TensorBoard - Precision - AUG.PNG)
+
 ![](./Images/TensorBoard - Recall - AUG.PNG)
 
 The overfitting was reduced with implementing several augmentation options. To improve the model a better set of data would be needed since the data contained unbalanced images.
