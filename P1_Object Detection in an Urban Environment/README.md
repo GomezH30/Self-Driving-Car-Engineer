@@ -174,10 +174,11 @@ Sampled through 10000 images from the dataset to analysis the labeling between v
 
 For the training experiment the residual network model (Resnet) was used. Initially, the model is trained with no augmentations, a batch size of 2, and with 2500 steps. To analysis the trained model Tensorboard was used, as shown below. The orange represents the training loss and the blue represents the validation.
 
-![](./Images/TensorBoard - Loss - NoAUG.PNG)
+<img src="./Images/TensorBoard - Loss - NoAUG.PNG" width=80% height=80%>
 
-![](./Images/TensorBoard - Precision - NoAUG.PNG)
-![](./Images/TensorBoard - Recall - NoAUG.PNG)
+<img src="./Images/TensorBoard - Precision - NoAUG.PNG" width=80% height=80%>
+
+<img src="./Images/TensorBoard - Recall - NoAUG.PNG" width=80% height=80%>
 
 #### Improve on the reference
 
@@ -200,11 +201,11 @@ Here are some results images with the augmentations options.
 
 The model is trained and evaluated with the augmented options. Due to computational power and memory the model was trained to 3000 steps. Overall, the augmented model decreased more compared to the reference model with no augmented options. The loss is much lower, thus indicating it is performing better. Results of the model with augmented options is shown below.
 
-![](./Images/TensorBoard - Loss AUG.PNG)
+<img src="./Images/TensorBoard - Loss AUG.PNG" width=80% height=80%>
 
-![](./Images/TensorBoard - Precision - AUG.PNG)
+<img src="./Images/TensorBoard - Precision - AUG.PNG" width=80% height=80%>
 
-![](./Images/TensorBoard - Recall - AUG.PNG)
+<img src="./Images/TensorBoard - Recall - AUG.PNG" width=80% height=80%>
 
 The overfitting was reduced with implementing several augmentation options. To improve the model a better set of data would be needed since the data contained unbalanced images.
 
