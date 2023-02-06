@@ -141,16 +141,34 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path experimen
 ## Submission Template
 
 ### Project overview
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
+
+The goal of this project is to identify objects in an urban environment and classify them if they are a vechile, pedestrian or cyclist using the detection API from TensorFlow. A set of Waymo's dataset is used for this project.
+
 
 ### Set up
-This section should contain a brief description of the steps to follow to run the code for this repository.
+
+For local used if you have your own Nvidia GPU, you can use the provided Docker file and follow the [requirements.txt](./build/requirements.txt).
+
 
 ### Dataset
 #### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+
+The dataset from Waymo contains information about bounding boxes and label classes. The images vary from being bright daylight, night time, and weather conditions. Ranging from low to high quality. Vechicles are represented in a red box, pedestrians are represented in a blue box, and cyclits are represented in a green box.
+
+| ![](./Images/Image1.png)  |  ![](./Images/Image2.png)  |
+:-------------------------:|:-------------------------:
+| ![](./Images/Image3.png)  |  ![](./Images/Image4.png)  |
+| ![](./Images/Image5.png)  |  ![](./Images/Image6.png)  |
+| ![](./Images/Image7.png)  |  ![](./Images/Image8.png)  |
+| ![](./Images/Image9.png)  |  ![](./Images/Image10.png)  |
+
+
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
+
+Sampled through 10000 images from the dataset to analysis the labeling between vehicles, pedestrians, and cyclist as shown in the figure below. Vehicles have a high distribution compared to pedestrians and cyclist. Cyclist showing a very low minor distribution.
+
+![](./Images/Histrogram.png)
 
 ### Training
 #### Reference experiment
