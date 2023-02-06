@@ -164,7 +164,6 @@ The dataset from Waymo contains information about bounding boxes and label class
 
 
 #### Cross validation
-This section should detail the cross validation strategy and justify your approach.
 
 Sampled through 10000 images from the dataset to analysis the labeling between vehicles, pedestrians, and cyclist as shown in the figure below. Vehicles have a high distribution compared to pedestrians and cyclist. Cyclist showing a very low minor distribution.
 
@@ -172,7 +171,41 @@ Sampled through 10000 images from the dataset to analysis the labeling between v
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+
+For the training experiment the residual network model (Resnet) was used. Initially, the model is trained with no augmentations, a batch size of 2, and with 2500 steps. To analysis the trained model Tensorboard was used, as shown below. The orange represents the training loss and the blue represents the validation.
+
+![](./Images/TensorBoard - Loss - NoAUG.PNG)
+
+![](./Images/TensorBoard - Precision - NoAUG.PNG)
+![](./Images/TensorBoard - Recall - NoAUG.PNG)
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+
+To improve on the experiment, several augmentations were implemented to the model from the Object Detection API.
+
+Augmentation Options:
+1. random_rgb_to_gray
+2. random_adjust_contrast
+3. random_adjust_brightness
+4. random_adjust_hue
+5. random_adjust_saturation
+
+Here are some results images with the augmentations options.
+
+| ![](./Images/AfterAug1.PNG)  |  ![](./Images/AfterAug2.PNG)  |
+:--------------------------:|:---------------------------:
+| ![](./Images/AfterAug3.PNG)  |  ![](./Images/AfterAug4.PNG)  |
+| ![](./Images/AfterAug5.PNG)  |  ![](./Images/AfterAug6.PNG)  |
+| ![](./Images/AfterAug7.PNG)  |  ![](./Images/AfterAug8.PNG)  |
+
+The model is trained and evaluated with the augmented options. Due to computational power and memory the model was trained to 3000 steps. Overall, the augmented model decreased more compared to the reference model with no augmented options. The loss is much lower, thus indicating it is performing better. Results of the model with augmented options is shown below.
+
+![](./Images/TensorBoard - Loss - AUG.PNG)
+
+![](./Images/TensorBoard - Precision - AUG.PNG)
+![](./Images/TensorBoard - Recall - AUG.PNG)
+
+The overfitting was reduced with implementing several augmentation options. To improve the model a better set of data would be needed since the data contained unbalanced images.
+
+
