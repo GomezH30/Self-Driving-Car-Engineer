@@ -19,6 +19,24 @@ def split(source, destination):
     """
     # TODO: Implement function
 
+    files = []
+
+    for file in glob.glob(f'{source}/*.tfrecord'):
+        files.append(file)
+
+    # split data
+    train_files, val_files, test_files = np.split(files, [int(.75*len(files)), int(.9*len(files))])
+    
+    # move data to directories
+    for data in train_files:
+        shutil.move(data, destination['train'])
+    
+    for data in val_files:
+        shutil.move(data, destination['val'])
+    
+    for data in test_files:
+        shutil.move(data, destination['test'])
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Split data into training / validation / testing')
