@@ -153,7 +153,7 @@ For local used if you have your own Nvidia GPU, you can use the provided Docker 
 ### Dataset
 #### Dataset analysis
 
-The dataset from Waymo contains information about bounding boxes and label classes. The images vary from being bright daylight, night time, and weather conditions. Ranging from low to high quality. Vechicles are represented in a red box, pedestrians are represented in a blue box, and cyclits are represented in a green box.
+The dataset from Waymo contains information about bounding boxes and label classes. The images vary from being bright daylight, night time, and weather conditions. These conditions can add an effect on the image varying on the quality ranging from low to high resolution. Images can be saturated due to being too bright during board daylight. During the night, the images can be too dark making it hard to detect the objects. Using the object detection IPA vechicles are represented in a red box, pedestrians are represented in a blue box, and cyclits are represented in a green box.
 
 | ![](./Images/Image1.PNG)  |  ![](./Images/Image2.PNG)  |
 :--------------------------:|:---------------------------:
