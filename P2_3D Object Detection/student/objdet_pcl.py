@@ -18,6 +18,10 @@ import torch
 # add project directory to python path to enable relative imports
 import os
 import sys
+import zlib
+import open3d as o3d
+from PIL import Image
+
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
@@ -38,13 +42,13 @@ def show_pcl(pcl):
     print("student task ID_S1_EX2")
 
     # step 1 : initialize open3d with key callback and create window
-    
+
     # step 2 : create instance of open3d point-cloud class
 
     # step 3 : set points in pcd instance by converting the point-cloud into 3d vectors (using open3d function Vector3dVector)
 
     # step 4 : for the first frame, add the pcd instance to visualization using add_geometry; for all other frames, use update_geometry instead
-    
+                                           
     # step 5 : visualize point cloud and keep window open until right-arrow is pressed (key-code 262)
 
     #######
@@ -57,20 +61,41 @@ def show_range_image(frame, lidar_name):
     ####### ID_S1_EX1 START #######     
     #######
     print("student task ID_S1_EX1")
+                                           
 
     # step 1 : extract lidar data and range image for the roof-mounted lidar
+    lidar = [obj for obj in frame.lasers if obj.name == lidar_name][0]                                       
     
     # step 2 : extract the range and the intensity channel from the range image
-    
+    ri = dataset_pb2.MatrixFloat()
+    ri.ParseFromString(zlib.decompress(lidar.ri_return1.range_image_compressed))
+    ri = np.array(ri.data).reshape(ri.shape.dims)
     # step 3 : set values <0 to zero
+    ri[ri<0]=0.0                                       
     
     # step 4 : map the range channel onto an 8-bit scale and make sure that the full range of values is appropriately considered
+    ri_range = ri[:, :, 0]
+    ri_range = (ri_range * 255) / (np.amax(ri_range) - np.amin(ri_range))
+    img_range = ri_range.astype(np.uint8)                                       
+                      
     
     # step 5 : map the intensity channel onto an 8-bit scale and normalize with the difference between the 1- and 99-percentile to mitigate the influence of outliers
+    ri_intensity = ri[:, :, 1]
+    percentile1 = np.percentile(ri_intensity, 1)
+    percentile99 = np.percentile(ri_intensity, 99)
+    ri_intensity = np.clip(ri_intensity, percentile1, percentile99) * 255 / percentile99
+                                           
+    img_intensity = ri_intensity.astype(np.uint8)                                        
     
     # step 6 : stack the range and intensity image vertically using np.vstack and convert the result to an unsigned 8-bit integer
     
-    img_range_intensity = [] # remove after implementing all steps
+    img_range_intensity = np.vstack(img_range, img_intensity)
+    img_range_intensity = img_range_intensity.astype(np.uint8)
+                                           
+    img_deg90 = int(img_range_intensity.shape[1] / 4)
+    img_center = int(img_range_intensity.shape[1] / 2)
+    img_range_intensity = img_range_intensity[:, img_center - img_deg90:img_center + img_deg90]
+#     img_range_intensity = [] # remove after implementing all steps
     #######
     ####### ID_S1_EX1 END #######     
     
