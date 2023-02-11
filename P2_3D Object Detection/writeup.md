@@ -17,15 +17,44 @@ Results of range image.
 The goal of this task is to use the Open3D library to display the lidar point-cloud in a 3d viewer in order to develop a feel for the nature of lidar point-clouds.
 
 ![](img/Img_S1_EX2_1.PNG)
+
+In this image you can see the point-cloud is able to display this truck with a trailer.
+
 ![](img/Img_S1_EX2_2.PNG)
+
+The point-cloud was able to display this compact car. We can see it is a 2-door car showing full front and side view. The hood, windshield, and tires can be seen.
+
 ![](img/Img_S1_EX2_3.PNG)
+
+Here in the point-cloud, we can see a SUV on the left and a 4-door car on the right. The point-cloud is able to display the windshield and front-end of the SUV.
+
 ![](img/Img_S1_EX2_4.PNG)
+
+In this image, we can see the point-cloud is displaying vehicles waiting for their right-of-away. The first vechile is a small compact car, and the point-cloud is able to display the tires, front-end and windshield. The second vehicle is cut-off, but we can a larger vehicle behind it. We can see the tires, bumper and windshield of the third vehicle. 
+
 ![](img/Img_S1_EX2_5.PNG)
+
+In this image we can identify the vehicles on the left are parked and the vehicles on the right are waiting for their right-of-way. The first vehicle parked, we can identify the side mirrors, windshield, and bumper.
+
 ![](img/Img_S1_EX2_6.PNG)
+
+In this image, the point-cloud is able to display the vehicle are center very clear with the tires, side mirrors, side view and back. 
+
 ![](img/Img_S1_EX2_7.PNG)
+
+In this image, the point-cloud is able to display a full compact vehicle with many points, almost if a smoothing filter was applied to the point-cloud. The vehicle behind we can identify the side mirrors, bumper and headlights. 
+
 ![](img/Img_S1_EX2_8.PNG)
+
+In this image, we can see the point-cloud is displaying the side view of the truck. We can identify the tires, side mirrors and windshields. 
+
 ![](img/Img_S1_EX2_9.PNG)
+
+In this image, the point-cloud is able to display the front-end of the vehicle showing the side-mirrors, bumper and headlights.
+
 ![](img/Img_S1_EX2_10.PNG)
+
+In this image, we can see the point-cloud is displaying the side view of this vehicle an we can identify the side mirrors, tires and rear bumper.
 
 ## Section 2 : Create Birds-Eye View from Lidar PCL
 
