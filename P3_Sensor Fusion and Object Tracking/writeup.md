@@ -47,6 +47,6 @@ In real-life scenarios cameras experience a lot of variation with depending on t
 
 ### 4. Can you think of ways to improve your tracking results in the future?
 
-- Use a bicycle model to represent the system
+- Use a bicycle model to represent the system.
 - Use different pretrained neural networks to compare tracking performance. 
 
