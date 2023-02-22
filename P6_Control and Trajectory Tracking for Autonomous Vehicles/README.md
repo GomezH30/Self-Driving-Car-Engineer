@@ -105,11 +105,11 @@ pip3 install matplotlib
 
 Screenshot of the car static in the CARLA simulator.
 
-![](img/Step1 - Results.PNG)
+<img src="./img/Step1 - Results.PNG" width=50% height=50%>
 
-Answer the following questions:
+### Answer the following questions:
 
-- Add the plots to your report and explain them (describe what you see)
+#### Add the plots to your report and explain them (describe what you see)
 
 In the table below are the gains used for the PID controller. The gains were chosen by trial and error.
 
@@ -127,23 +127,24 @@ Here is the plot for throttle error, throttle output, and brake output. At first
 
 ![](img/Plot2_Results1.PNG)
 
-- What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+#### What is the effect of the PID according to the plots, how each part of the PID affects the control command?
 
 The PID (proportional-integral-derivative) consists of three components, Proportional (P), Integral (I), and Derivative (D). 
 - The proportional is proportional to the error of the desired reference and the actual output. The proportional tends to have a fast response to the system and potentially overshoot. This can cause oscillation and instability in the system.
 - The integral is the integral of the error over time, it sums all the error over time. The integral tends to help to reduce steady-state error and helps to correct for any bias in the system.
 - The derivative is the rate of change of the error. The derivatives tends to be a correction for the proportional, it helps to reduce any overshooting by the proportional gain.
 
-- How would you design a way to automatically tune the PID parameters?
+#### How would you design a way to automatically tune the PID parameters?
 
 In order to optimize the gains for the PID controller is to implement the Twiddle algorithm.  
 
-- PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+#### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+
 Pro: Easily to be implemented and requires little information about the system that needs to be controlled.
 Con: The PID controller can be very inefficent without having the system dynamics model.
 
 
-- (Optional) What would you do to improve the PID controller?
+#### (Optional) What would you do to improve the PID controller?
 An LQR controller can be implemeneted which can calculates the gains for the PID controller using the bicycle model to be the system.  
 
 
