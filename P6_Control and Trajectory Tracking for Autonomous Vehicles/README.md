@@ -141,6 +141,7 @@ In order to optimize the gains for the PID controller is to implement the Twiddl
 #### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
 
 Pro: Easily to be implemented and requires little information about the system that needs to be controlled.
+
 Con: The PID controller can be very inefficent without having the system dynamics model.
 
 
